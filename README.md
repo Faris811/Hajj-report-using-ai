@@ -2,9 +2,17 @@
 
 AI-assisted classification of Hajj reports by priority.
 
-## Improved version
+## Streamlit Community Cloud
 
-This branch adds a complete Streamlit application for classifying reports as Low, Medium, High, or Critical.
+This repository is ready to deploy on Streamlit Community Cloud.
+
+1. Open Streamlit Community Cloud and sign in with GitHub.
+2. Create a new app and select this repository.
+3. Select branch **ai-enhanced** (or **main** after the pull request is merged).
+4. Set the main file to **app.py**.
+5. Click **Deploy**.
+
+The dependencies are declared in `requirements.txt`, so Streamlit Cloud can install them automatically.
 
 ## Features
 
@@ -15,7 +23,7 @@ This branch adds a complete Streamlit application for classifying reports as Low
 - Batch CSV classification
 - Confidence score
 - Downloadable prediction results
-- Clear project documentation
+- Streamlit Cloud deployment configuration
 
 ## Run locally
 
@@ -24,12 +32,12 @@ This branch adds a complete Streamlit application for classifying reports as Low
 
 ## CSV format
 
-The uploader accepts a report column named: report, text, description, بلاغ, or البلاغ.
+The uploader accepts a report column named: `report`, `text`, `description`, `بلاغ`, or `البلاغ`.
 
 ## Architecture
 
 Input report -> normalization -> safety-rule check + ML classifier -> priority + confidence -> UI/export
 
-## Note
+## Important limitation
 
-The included examples are demonstration data. Production use requires properly labeled historical Hajj reports, validation, human review, and appropriate safety controls.
+The included examples are demonstration data. This is a baseline/demo classifier, not a production Hajj decision system. Production use requires properly labeled historical Hajj reports, train/validation/test evaluation, human review, monitoring, and appropriate safety controls.
